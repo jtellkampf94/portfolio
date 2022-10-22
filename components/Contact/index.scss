@@ -1,0 +1,119 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.contact {
+  background: url("/assets/images/bg-light.png");
+  color: $black;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include header;
+
+  &__heading {
+    flex-direction: column;
+    align-items: center;
+
+    & h2 {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: $primary-blue;
+      margin: 2rem 0 4rem;
+    }
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: fit-content;
+    @media only screen and (max-width: 650px) {
+      width: 90%;
+    }
+
+    &-sender {
+      display: flex;
+      flex-direction: column;
+
+      @media only screen and (min-width: 650px) {
+        flex-direction: row;
+      }
+
+      & input:first-of-type {
+        margin-bottom: 0.5rem;
+        @media only screen and (min-width: 650px) {
+          margin-bottom: 0;
+        }
+      }
+
+      & input:last-of-type {
+        @media only screen and (min-width: 650px) {
+          margin-left: 0.5rem;
+        }
+      }
+    }
+
+    & input,
+    textarea {
+      outline: none;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      font-family: $font;
+      font-size: 1rem;
+      border: none;
+      border-bottom: 3px solid $white;
+      transition: all 200ms ease-in;
+
+      &:hover {
+        border-bottom: 3px solid $primary-blue;
+      }
+
+      &:focus {
+        border-bottom: 3px solid $secondary-blue;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: #cacaca;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: #eeeeee;
+        border: 1px solid #cacaca;
+      }
+    }
+
+    & textarea {
+      height: 150px;
+    }
+
+    & #subject {
+      margin: 0.5rem 0;
+    }
+
+    & button {
+      cursor: pointer;
+      width: 150px;
+      height: 40px;
+      outline: none;
+      color: $primary-blue;
+      border: 3px solid $primary-blue;
+      background: transparent;
+      font-family: $font;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-transform: uppercase;
+      font-size: 1rem;
+      border-radius: 5px;
+      margin: 0.5rem 0;
+      transition: all 2ms ease-in;
+      align-self: flex-end;
+
+      &:hover {
+        color: $white;
+        background: $primary-blue;
+      }
+    }
+  }
+}

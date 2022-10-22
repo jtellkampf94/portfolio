@@ -1,0 +1,161 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.work {
+  background-color: rgb(36, 36, 36);
+  color: white;
+  @include header;
+
+  &__container {
+    width: 100%;
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+  }
+
+  &__card {
+    cursor: pointer;
+    background-color: #292929;
+    flex-shrink: 0;
+    width: 300px;
+    scroll-snap-align: start;
+    padding: 20px;
+    transition: opacity 200ms;
+    opacity: 0.4;
+    margin-left: 2.5rem;
+
+    @media only screen and (min-width: 500px) {
+      width: 500px;
+    }
+
+    @media only screen and (min-width: 785px) {
+      width: 700px;
+      padding: 40px;
+    }
+    @media only screen and (min-width: 985px) {
+      width: 900px;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &-header {
+      margin: 1rem 0;
+      text-transform: uppercase;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @media only screen and (min-width: 500px) {
+        align-items: flex-start;
+      }
+
+      & h3 {
+        font-size: 1.25rem;
+        @media only screen and (min-width: 785px) {
+          font-size: 1.5rem;
+        }
+      }
+
+      & h4 {
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 400;
+        @media only screen and (min-width: 500px) {
+          text-align: left;
+        }
+      }
+    }
+
+    &-image {
+      width: 200px;
+      height: 200px;
+      object-fit: contain;
+
+      @media only screen and (min-width: 585px) {
+        width: 400px;
+        height: 400px;
+      }
+
+      &-container {
+        margin-bottom: 1rem;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    &-icon {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+
+      @media only screen and (min-width: 500px) {
+        width: 30px;
+        height: 30px;
+      }
+
+      @media only screen and (min-width: 785px) {
+        width: 40px;
+        height: 40px;
+      }
+
+      &-container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+      }
+    }
+
+    &-description {
+      & h4 {
+        text-align: center;
+        text-transform: uppercase;
+
+        @media only screen and (min-width: 500px) {
+          text-align: left;
+        }
+      }
+
+      & ul {
+        list-style-type: disc;
+        padding-left: 20px;
+
+        & li {
+          margin-top: 1rem;
+        }
+      }
+    }
+
+    &-button-container {
+      display: flex;
+      padding-top: 30px;
+      justify-content: center;
+      align-items: center;
+
+      & button {
+        cursor: pointer;
+        width: 100px;
+        height: 40px;
+        outline: none;
+        border: 3px solid $primary-blue;
+        background: transparent;
+        color: $white;
+        font-family: $font;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        font-size: 1rem;
+        border-radius: 5px;
+        margin: 10px;
+        transition: all 2ms ease-in;
+
+        &:hover {
+          background: $primary-blue;
+        }
+      }
+    }
+  }
+}
