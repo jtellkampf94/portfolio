@@ -1,11 +1,16 @@
 export default {
-  name: "aboutMe",
-  title: "AboutMe",
+  name: "pageInfoMe",
+  title: "PageInfoMe",
   type: "document",
   fields: [
     {
-      name: "aboutTitle",
-      title: "Title",
+      name: "name",
+      title: "Name",
+      type: "string",
+    },
+    {
+      name: "role",
+      title: "Role",
       type: "string",
     },
     {
@@ -14,7 +19,7 @@ export default {
       type: "string",
     },
     {
-      name: "aboutImage",
+      name: "backgroundImage",
       title: "Image",
       type: "image",
     },
