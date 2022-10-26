@@ -1,6 +1,6 @@
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 
-const Header = () => {
+const Header: React.FC = () => {
   const [text, count] = useTypewriter({
     words: ["Full Stack Web Developer", "Software Engineer"],
     loop: true,

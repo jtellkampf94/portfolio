@@ -1,3 +1,4 @@
+import { NextPage } from "next";
 import Head from "next/head";
 import NavBar from "../components/NavBar";
 import Header from "../components/Header";
@@ -6,7 +7,7 @@ import Skills from "../components/Skills";
 import Work from "../components/Work";
 import Contact from "../components/Contact";
 
-export default function Home() {
+const Home: NextPage = () => {
   return (
     <>
       <Head>
@@ -25,4 +26,6 @@ export default function Home() {
       </div>
     </>
   );
-}
+};
+
+export default Home;

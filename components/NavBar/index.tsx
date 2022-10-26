@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 
-const NavBar = () => {
+const NavBar: React.FC = () => {
   const [isActive, setIsActive] = useState(false);
   const isSmallScreen = useMediaQuery({ query: "(max-width: 900px)" });
 

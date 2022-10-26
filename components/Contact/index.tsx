@@ -1,40 +1,41 @@
-import { useState, useRef } from "react";
+import { useState, useRef, FormEvent } from "react";
 import emailjs from "@emailjs/browser";
 
 import Modal from "../Modal";
 
-const Contact = () => {
+const Contact: React.FC = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const form = useRef();
+  const form = useRef<HTMLFormElement>(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
-        process.env.NEXT_PUBLIC_SERVICE_ID,
-        process.env.NEXT_PUBLIC_TEMPLATE_ID,
-        form.current,
-        process.env.NEXT_PUBLIC_EMAIL_ID
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          e.target.reset();
-          setName("");
-          setEmail("");
-          setSubject("");
-          setMessage("");
-          setIsModalOpen(true);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+    if (form.current) {
+      emailjs
+        .sendForm(
+          process.env.NEXT_PUBLIC_SERVICE_ID as string,
+          process.env.NEXT_PUBLIC_TEMPLATE_ID as string,
+          form.current,
+          process.env.NEXT_PUBLIC_EMAIL_ID
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+            setName("");
+            setEmail("");
+            setSubject("");
+            setMessage("");
+            setIsModalOpen(true);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+    }
   };
 
   return (

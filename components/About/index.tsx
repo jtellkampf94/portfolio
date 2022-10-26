@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const About = () => {
+const About: React.FC = () => {
   return (
     <section className="about" id="about">
       <div className="about__header">

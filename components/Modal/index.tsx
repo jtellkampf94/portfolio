@@ -1,8 +1,16 @@
+import { ReactNode } from "react";
 import ReactDOM from "react-dom";
 import OutsideClickHandler from "react-outside-click-handler";
 import { BsCheckCircle } from "react-icons/bs";
+import React from "react";
 
-const Modal = ({ children, open, closeModal }) => {
+interface ModalProps {
+  open: boolean;
+  closeModal: () => void;
+  children: ReactNode;
+}
+
+const Modal: React.FC<ModalProps> = ({ children, open, closeModal }) => {
   if (!open) return null;
 
   return ReactDOM.createPortal(

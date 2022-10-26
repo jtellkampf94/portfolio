@@ -1,4 +1,4 @@
-const Work = () => {
+const Work: React.FC = () => {
   return (
     <section className="work" id="work">
       <div className="work__heading">
