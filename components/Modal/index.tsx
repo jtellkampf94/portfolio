@@ -26,7 +26,7 @@ const Modal: React.FC<ModalProps> = ({ children, open, closeModal }) => {
         </div>
       </OutsideClickHandler>
     </>,
-    document.getElementById("portal")
+    document.getElementById("portal") as HTMLElement
   );
 };
 
