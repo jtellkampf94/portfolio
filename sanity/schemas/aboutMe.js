@@ -10,8 +10,9 @@ export default {
     },
     {
       name: "about",
-      title: "About",
-      type: "string",
+      title: "about",
+      type: "array",
+      of: [{ type: "reference", to: { type: "about" } }],
     },
     {
       name: "aboutImage",
