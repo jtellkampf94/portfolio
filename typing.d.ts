@@ -24,6 +24,12 @@ interface Skill extends SanityBody {
   skill: string;
 }
 
+export interface Skills extends SanityBody {
+  _type: "skills";
+  category: string;
+  skillList: Skill[];
+}
+
 export interface Work extends SanityBody {
   _type: "work";
   code: string;
