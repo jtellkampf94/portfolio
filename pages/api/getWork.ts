@@ -4,7 +4,7 @@ import { sanityClient } from "../../sanity";
 import { Work } from "../../typing";
 
 const query = groq`
-  *[_type == "work"]{ ..., "description": *[_type == "workDescription" ], "skillList": *[_type == "skill"] }
+  *[_type == "work"]{ ..., description[] ->, skillList[] -> }
 `;
 
 type Data = {

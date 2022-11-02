@@ -24,6 +24,18 @@ interface Skill extends SanityBody {
   skill: string;
 }
 
+interface About extends SanityBody {
+  _type: "about";
+  about: string;
+}
+
+export interface AboutMe extends SanityBody {
+  _type: "aboutMe";
+  aboutTitle: string;
+  aboutImage: Image;
+  about: About[];
+}
+
 export interface Skills extends SanityBody {
   _type: "skills";
   category: string;
