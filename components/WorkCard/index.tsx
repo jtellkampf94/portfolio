@@ -1,3 +1,4 @@
+import { urlFor } from "../../sanity";
 import { Work } from "../../typing";
 
 interface WorkProps {
@@ -8,14 +9,18 @@ const WorkCard: React.FC<WorkProps> = ({ work }) => {
   return (
     <div className="work__card">
       <div className="work__card-image-container">
-        <img className="work__card-image" alt="" src="" />
+        <img
+          className="work__card-image"
+          alt=""
+          src={urlFor(work.image).url()}
+        />
       </div>
       <div className="work__card-icon-container">
         {work.skillList.map((skill) => (
           <img
             key={skill._id}
             className="work__card-icon"
-            src="/assets/images/typescript-logo.png"
+            src={urlFor(skill.image).url()}
             alt="Typescript Logo"
           />
         ))}
@@ -28,7 +33,7 @@ const WorkCard: React.FC<WorkProps> = ({ work }) => {
         <h4>Description</h4>
         <ul>
           {work.description.map((description) => (
-            <li id={description._id}>{description.description}</li>
+            <li key={description._id}>{description.description}</li>
           ))}
         </ul>
       </div>

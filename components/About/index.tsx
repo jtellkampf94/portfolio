@@ -1,34 +1,27 @@
-import Image from "next/image";
+import { urlFor } from "../../sanity";
+import { AboutMe } from "../../typing";
 
-const About: React.FC = () => {
+interface AboutProps {
+  aboutMe: AboutMe;
+}
+
+const About: React.FC<AboutProps> = ({ aboutMe }) => {
   return (
     <section className="about" id="about">
       <div className="about__header">
-        <h1>About Me</h1>
+        <h1>{aboutMe.aboutTitle}</h1>
       </div>
       <div className="about__container">
         <img
-          // src="https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Arsenal_FC.svg/1200px-Arsenal_FC.svg.png"
-          src="/assets/images/work-station.jpg"
+          src={urlFor(aboutMe.aboutImage).url()}
           alt="Work Station"
           className="about__image"
         />
 
         <div className="about__description">
-          <p>
-            Hi, I'm Jonathan Tellkampf, a full stack web developer. I
-            predominantly work with technologies that use JavaScript, TypeScript
-            and SQL programming languages. I am passionate about coding and can
-            work on both sides of the stack, from building UI components on the
-            front end, to implementing server side functionality on the back
-            end.
-          </p>
-
-          <p>
-            I can help you create cost effective digital products that solve
-            business and customer needs. I am adaptable and willing to learn
-            outside my scope of knowledge to produce solutions for you.
-          </p>
+          {aboutMe.about.map((description) => (
+            <p key={description._id}>{description.about}</p>
+          ))}
         </div>
       </div>
     </section>

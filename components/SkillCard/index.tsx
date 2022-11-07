@@ -1,3 +1,4 @@
+import { urlFor } from "../../sanity";
 import { Skills } from "../../typing";
 
 interface SkillCardProps {
@@ -17,7 +18,7 @@ const SkillCard: React.FC<SkillCardProps> = ({ skills }) => {
               <img
                 className="skills__list-item-image"
                 alt="React Logo"
-                src="/assets/images/react-logo.png"
+                src={urlFor(skill.image).url()}
               />
               <div className="skills__list-item-content">{skill.skill}</div>
             </div>
