@@ -17,7 +17,7 @@ const SkillCard: React.FC<SkillCardProps> = ({ skills }) => {
             <div className="skills__list-item-container">
               <img
                 className="skills__list-item-image"
-                alt="React Logo"
+                alt={`${skill.skill} logo`}
                 src={urlFor(skill.image).url()}
               />
               <div className="skills__list-item-content">{skill.skill}</div>

@@ -1,4 +1,5 @@
 import { NextPage, GetServerSideProps } from "next";
+import { useState, useEffect } from "react";
 
 import {
   Work as WorkData,
@@ -6,6 +7,7 @@ import {
   AboutMe,
   PageInfoMe,
 } from "../typing";
+import Loader from "../components/Loader";
 import NavBar from "../components/NavBar";
 import Header from "../components/Header";
 import About from "../components/About";
@@ -25,11 +27,22 @@ interface HomeProps {
 }
 
 const Home: NextPage<HomeProps> = ({ work, skills, aboutMe, pageInfoMe }) => {
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    if (pageInfoMe?.backgroundImage) {
+      setIsLoading(false);
+    }
+  }, []);
+
+  if (isLoading) {
+    return <Loader />;
+  }
+
   return (
     <>
       <div className="app">
         <NavBar />
-        <Header />
+        <Header pageInfoMe={pageInfoMe} />
         <About aboutMe={aboutMe} />
         <Skills skillsLists={skills} />
         <Work workList={work} />

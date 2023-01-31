@@ -8,6 +8,7 @@ import "../components/Skills/index.scss";
 import "../components/Work/index.scss";
 import "../components/Contact/index.scss";
 import "../components/Modal/index.scss";
+import "../components/Loader/index.scss";
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (

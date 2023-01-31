@@ -1,0 +1,10 @@
+.loader {
+  &__container {
+    background-color: rgb(36, 36, 36);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

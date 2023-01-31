@@ -6,11 +6,6 @@
   z-index: 1;
 
   &__image {
-    background: radial-gradient(circle, transparent 0%, rgba(0, 0, 0, 1) 100%),
-      url("/assets/images/home-hero.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     height: calc(100vh + 70px);
     width: 100%;
     display: flex;
