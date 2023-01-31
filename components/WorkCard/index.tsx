@@ -38,10 +38,10 @@ const WorkCard: React.FC<WorkProps> = ({ work }) => {
         </ul>
       </div>
       <div className="work__card-button-container">
-        <a href={work.code} target="_blank">
+        <a href={work.code} target="_blank" rel="noreferrer">
           <button>Code</button>
         </a>
-        <a href={work.website} target="_blank">
+        <a href={work.website} target="_blank" rel="noreferrer">
           <button>Website</button>
         </a>
       </div>
